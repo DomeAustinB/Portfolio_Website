@@ -55,7 +55,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1>{`Hello, I'm Austin`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Full Stack Developer", "Data Analyst", "Project Manager" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hello, I'm Austin`} <br></br> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Full Stack Developer", "Data Analyst", "Project Manager" ]'><span className="wrap">{text}</span></span></h1>
                   <p>I am a fast learner who needs minimal supervision and approaches every project with a positive attitude, and as a learning experience. Additionally, I am quietly confident, naturally curious, and perpetually working on
             improving my skills, or the existing process, one problem at a time.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
