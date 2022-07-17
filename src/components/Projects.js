@@ -6,6 +6,9 @@ import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
+import projImg7 from "../assets/img/project-img7.png";
+import projImg8 from "../assets/img/project-img8.png";
+import projImg9 from "../assets/img/project-img9.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -47,6 +50,24 @@ export const Projects = () => {
     },
   ]
 
+  const projs = [
+    {
+      title: "C.A.T.",
+      description: "bus dev",
+      imgUrl: projImg7
+  },
+  {
+      title: "C.A.T.",
+      description: "bus dev",
+      imgUrl: projImg8,
+  },
+  {
+      title: "C.A.T.",
+      description: "bus dev",
+      imgUrl: projImg9,
+  },
+  ]
+
   return (
     <section className="project" id="project">
       <Container>
@@ -56,17 +77,17 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p></p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
                       <Nav.Link eventKey="first">The Admin Group</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">pocketAI</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">pocketAI</Nav.Link>
+                      <Nav.Link eventKey="third">C.A.T.</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -85,9 +106,6 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
                     <Row>
                         {
                           projctS.map((projctS, index) => {
@@ -95,6 +113,20 @@ export const Projects = () => {
                               <ProjectCard
                                 key={index}
                                 {...projctS}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="third">
+                    <Row>
+                        {
+                          projs.map((projs, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...projs}
                                 />
                             )
                           })
