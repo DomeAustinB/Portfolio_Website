@@ -35,7 +35,7 @@ export const Projects = () => {
   const projctS = [
     {
         title: "pocketAI",
-        description: "bus dev",
+        description: "The mission of pocketAI is to take the complex world of Artificial Intelligence and simplify it into a user-friendly interface. This app levels the playing field, giving people with no coding background all the bennifits of A.I.",
         imgUrl: projImg4
     },
     {
