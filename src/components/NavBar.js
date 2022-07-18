@@ -5,6 +5,10 @@ import {
   faLinkedin,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
+import { HashLink } from 'react-router-hash-link';
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
 
 export const NavBar = () => {
 
@@ -30,6 +34,7 @@ export const NavBar = () => {
   }
 
   return (
+    <Router>
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -44,25 +49,30 @@ export const NavBar = () => {
           <span className="navbar-text">
             <div className="social-icon">
             <a
-            href="https://www.linkedin.com/in/austin-dome-2323b6191/"
-            target="_blank"
-            rel="noreferrer"
-          >
+              href="https://www.linkedin.com/in/austin-dome-2323b6191/"
+              target="_blank"
+              rel="noreferrer"
+            >
             <FontAwesomeIcon icon={faLinkedin} color="#fff" />
-          </a>
-          <a
-            href="https://github.com/DomeAustinB"
-            target="_blank"
-            rel="noreferrer"
-          >
+            </a>
+            <a
+              href="https://github.com/DomeAustinB"
+              target="_blank"
+              rel="noreferrer"
+            >
             <FontAwesomeIcon icon={faGithub} color="#fff" />
-          </a>
+            </a>
               
             </div>
-            <button className="vvd" onClick={() => console.log('contact')}><span>Let’s Connect</span></button>
+            <HashLink to='#contact'>
+              <button className="vvd"><span>Let’s Connect</span></button>
+            </HashLink>
           </span>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  </Router>
+)
 }
+
+

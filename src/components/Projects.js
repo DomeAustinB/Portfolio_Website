@@ -22,12 +22,12 @@ export const Projects = () => {
     },
     {
       title: "The Admin Group",
-      description: "Design & Development",
+      description: "The social media app that helps you find new places to eat, go out, and enjoy life! All recommendations are based on a network of your friends and mutual friends' 'likes'.",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "The Admin Group",
+      description: "The social media app that helps you find new places to eat, go out, and enjoy life! All recommendations are based on a network of your friends and mutual friends' 'likes'.",
       imgUrl: projImg3,
     },
   ];
@@ -40,12 +40,12 @@ export const Projects = () => {
     },
     {
         title: "pocketAI",
-        description: "bus dev",
+        description: "The mission of pocketAI is to take the complex world of Artificial Intelligence and simplify it into a user-friendly interface. This app levels the playing field, giving people with no coding background all the bennifits of A.I.",
         imgUrl: projImg5,
     },
     {
         title: "pocketAI",
-        description: "bus dev",
+        description: "The mission of pocketAI is to take the complex world of Artificial Intelligence and simplify it into a user-friendly interface. This app levels the playing field, giving people with no coding background all the bennifits of A.I.",
         imgUrl: projImg6,
     },
   ]
@@ -53,17 +53,17 @@ export const Projects = () => {
   const projs = [
     {
       title: "C.A.T.",
-      description: "bus dev",
+      description: "Fashion company ERP/CRM",
       imgUrl: projImg7
   },
   {
       title: "C.A.T.",
-      description: "bus dev",
+      description: "Fashion company ERP/CRM",
       imgUrl: projImg8,
   },
   {
       title: "C.A.T.",
-      description: "bus dev",
+      description: "Fashion company ERP/CRM",
       imgUrl: projImg9,
   },
   ]
