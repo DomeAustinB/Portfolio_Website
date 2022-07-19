@@ -2,7 +2,7 @@
   "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://domeaustinb.dev",
+  "homepage": ".",
   "dependencies": {
     "-": "^0.0.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
