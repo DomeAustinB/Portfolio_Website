@@ -64,7 +64,7 @@ export const NavBar = () => {
             </a>
               
             </div>
-            <HashLink to='#contact'>
+            <HashLink to='#connect'>
               <button className="vvd"><span>Let’s Connect</span></button>
             </HashLink>
           </span>

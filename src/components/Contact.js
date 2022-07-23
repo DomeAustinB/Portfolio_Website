@@ -1,50 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/qrcode.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import emailjs from '@emailjs/browser'
 
-export const Contact = () => {
-  const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
+const Contact = () => {
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+    .sendForm(
+      'service_63mvqwt',
+      'template_9sc2k9q',
+      form.current,
+        'hAzXX3jRXiLWQrjjU'
+      )
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
   }
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
 
-  const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("https://domeaustinb.dev/#contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
-    }
-  };
 
   return (
-    <section className="contact" id="contact">
+    <>
+    <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
           <Col size={12} md={6}>
@@ -56,41 +44,46 @@ export const Contact = () => {
             <h1>Scan for Contact Info</h1>
           </Col>
           <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+            
+                <div className={"animate__animated animate__fadeIn"}>
                 <h2>Let's Connect</h2>
-                <form onSubmit={handleSubmit}>
+            
+                <div className="contact-form">
+                <form ref={form} onSubmit={sendEmail}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                      <input placeholder="First Name" type="text" name="firstName" required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                      <input placeholder="Last Name" type="text" name="lastName" required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                      <input placeholder="Email Address" type="email" name="email" required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
+                      <input placeholder="Phone No." type="tel" name="phone" />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
+                      <textarea rows="5" placeholder="Message" name="message" required ></textarea>
                     </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
+                    
+                    
+                    
                   </Row>
+                  <Col size={12} className="px-1" >
+                  <input type="submit" className="flat-button" value="Send" />
+                  </Col>
                 </form>
-              </div>}
-            </TrackVisibility>
+                
+              </div>
+              </div>
           </Col>
         </Row>
       </Container>
     </section>
+
+    </>
   )
 }
+
+export default Contact
