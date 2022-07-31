@@ -1,6 +1,7 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import reactlogo from "../assets/img/reactlogo.svg";
+import mongologo from "../assets/img/mongodb.svg";
+import firebaselogo from "../assets/img/firebaselogo.svg";
+import nodejslogo from "../assets/img/node-js.svg"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.jpg"
@@ -37,19 +38,19 @@ export const Skills = () => {
             an established company. My ability to understand complex ideas/technology, and implement them through a user-friendly interface will make me an asset to your team.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="meter" />
+                                <img src={reactlogo} alt="reactlogo" />
                                 <h5>React</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="meter2" />
+                                <img src={mongologo} alt="mongologo" />
                                 <h5>MongoDB</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="meter3" />
-                                <h5>Express</h5>
+                                <img src={firebaselogo} alt="firebaselogo" />
+                                <h5>Firebase</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="meter4" />
+                                <img src={nodejslogo} alt="nodejslogo" />
                                 <h5>Node.js</h5>
                             </div>
                         </Carousel>
