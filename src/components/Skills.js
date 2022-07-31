@@ -1,7 +1,7 @@
 import reactlogo from "../assets/img/reactlogo.svg";
-import mongologo from "../assets/img/mongodb.svg";
+import mongologo from "../assets/img/mongodblogo.svg";
 import firebaselogo from "../assets/img/firebaselogo.svg";
-import nodejslogo from "../assets/img/node-js.svg"
+import nodejslogo from "../assets/img/nodejs-icon.svg"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.jpg"
